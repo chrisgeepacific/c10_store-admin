@@ -8,10 +8,6 @@ WORKDIR /app/admin
 COPY package.json .
 COPY package-lock.json* .
 
-# Cập nhật package và cài đặt phụ thuộc
-RUN apk update && apk add --no-cache python3 make g++
-RUN npm ci
-
 # Sao chép toàn bộ mã nguồn
 COPY . .
 
